@@ -4,8 +4,6 @@ namespace app\controllers;
 
 use app\models\LoginForm;
 use Yii;
-use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
 
 class ProfileController extends BaseController
 {

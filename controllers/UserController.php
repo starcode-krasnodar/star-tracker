@@ -5,24 +5,20 @@ namespace app\controllers;
 use Yii;
 use app\models\User;
 use yii\data\ActiveDataProvider;
-use app\controllers\BaseController;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
 class UserController extends BaseController
 {
-    public function behaviors()
+    /**
+     * @inheritdoc
+     */
+    public function verbsActions()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
+            'delete' => ['POST'],
         ];
     }
 

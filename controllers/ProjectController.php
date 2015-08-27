@@ -5,24 +5,20 @@ namespace app\controllers;
 use Yii;
 use app\models\Project;
 use yii\data\ActiveDataProvider;
-use app\controllers\BaseController;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * ProjectController implements the CRUD actions for Project model.
  */
 class ProjectController extends BaseController
 {
-    public function behaviors()
+    /**
+     * @inheritdoc
+     */
+    public function verbsActions()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
+            'delete' => ['POST'],
         ];
     }
 
