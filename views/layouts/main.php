@@ -275,6 +275,13 @@ AppAsset::register($this);
                         <?= Html::a('<i class="fa fa-dashboard fa-fw"></i> ' . Yii::t('app', 'Dashboard'), ['/site/index']) ?>
                     </li>
                     <li>
+                        <?= Html::a('<i class="fa fa-cubes"></i> ' . Yii::t('app', 'Team Works') . '<span class="fa arrow"></span>', ['team-work/index']) ?>
+                        <ul class="nav nav-second-level">
+                            <li><?= Html::a('<i class="fa fa-list"></i> ' . Yii::t('app', 'All team works'), ['/team-work/index']) ?></li>
+                            <li><?= Html::a('<i class="fa fa-plus"></i> ' . Yii::t('app', 'Create'), ['/team-work/create']) ?></li>
+                        </ul>
+                    </li>
+                    <li>
                         <?= Html::a('<i class="fa fa-cube"></i> ' . Yii::t('app', 'Projects') . '<span class="fa arrow"></span>', ['/project/index']) ?>
                         <ul class="nav nav-second-level">
                             <li><?= Html::a('<i class="fa fa-list"></i> ' . Yii::t('app', 'All projects'), ['/project/index']) ?></li>
