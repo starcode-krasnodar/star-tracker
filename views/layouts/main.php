@@ -295,6 +295,13 @@ AppAsset::register($this);
                             <li><?= Html::a('<i class="fa fa-plus"></i> ' . Yii::t('app', 'Create'), ['/project/create']) ?></li>
                         </ul>
                     </li>
+                    <li>
+                        <?= Html::a('<i class="fa fa-tasks"></i> ' . Yii::t('app', 'Tasks') . '<span class="fa arrow"></span>', ['/task/index']) ?>
+                        <ul class="nav nav-second-level">
+                            <li><?= Html::a('<i class="fa fa-list"></i> ' . Yii::t('app', 'All tasks'), ['/task/index']) ?></li>
+                            <li><?= Html::a('<i class="fa fa-plus"></i> ' . Yii::t('app', 'Create'), ['/task/create']) ?></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
