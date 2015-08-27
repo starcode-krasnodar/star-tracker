@@ -14,6 +14,8 @@ class m150827_134616_create_task_comment_table extends Migration
             'task_id' => $this->bigInteger()->notNull(),
             'user_id' => $this->integer()->notNull(),
             'body' => $this->text()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
         ], $this->getTableOptions());
 
         $this->addForeignKey('fk-task_comment-task', '{{%task_comment}}', 'task_id',
