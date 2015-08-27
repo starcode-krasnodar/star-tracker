@@ -8,6 +8,9 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
