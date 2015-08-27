@@ -9,6 +9,6 @@ class RaphaelAsset extends AssetBundle
     public $sourcePath = '@bower/raphael';
     public $baseUrl = '@web';
     public $js = [
-        YII_DEBUG ? 'raphael.js' : 'raphael-min.js',
+        'raphael.js',
     ];
 }

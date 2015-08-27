@@ -6,10 +6,10 @@ use yii\web\AssetBundle;
 
 class MorrisJsAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/morris.js';
+    public $sourcePath = '@bower/morrisjs';
     public $baseUrl = '@web';
     public $js = [
-        YII_DEBUG ? 'morris.js' : 'morris.min.js',
+        'morris.js',
     ];
     public $depends = [
         'app\assets\RaphaelAsset',

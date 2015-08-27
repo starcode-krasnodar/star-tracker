@@ -9,10 +9,10 @@ class MetisMenuAsset extends AssetBundle
     public $sourcePath = '@bower/metisMenu/dist';
     public $baseUrl = '@web';
     public $css = [
-        YII_DEBUG ? 'metisMenu.css' : 'metisMenu.min.css',
+        'metisMenu.css',
     ];
     public $js = [
-        YII_DEBUG ? 'metisMenu.js' : 'metisMenu.min.js',
+        'metisMenu.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',
