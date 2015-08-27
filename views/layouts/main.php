@@ -242,11 +242,11 @@ AppAsset::register($this);
                 <ul class="dropdown-menu dropdown-user">
                     <li><span class="navbar-text"><?= Yii::$app->user->identity->email ?></span></li>
                     <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                    <li><?= Html::a('<i class="fa fa-user fa-fw"></i> ' . Yii::t('app', 'User Profile'), ['/profile/index']) ?></li>
+                    <li><?= Html::a('<i class="fa fa-gear fa-fw"></i> ' . Yii::t('app', 'Settings'), ['/profile/settings']) ?></li>
                     <li class="divider"></li>
                     <li>
-                        <?= Html::a('<i class="fa fa-sign-out fa-fw"></i> ' . Yii::t('app', 'Logout'), ['/site/logout'], [
+                        <?= Html::a('<i class="fa fa-sign-out fa-fw"></i> ' . Yii::t('app', 'Logout'), ['/profile/logout'], [
                             'data-method' => 'post',
                         ]) ?>
                     </li>
