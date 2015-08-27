@@ -28,3 +28,6 @@ phpunit.phar
 
 # local config files
 config/*-local.php
+
+# markup dir
+markup
