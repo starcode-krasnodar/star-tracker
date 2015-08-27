@@ -272,7 +272,14 @@ AppAsset::register($this);
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <?= Html::a('<i class="fa fa-dashboard fa-fw"></i> ' . Yii::t('app', 'Dashboard'), ['/site/index']) ?>
+                    </li>
+                    <li>
+                        <?= Html::a('<i class="fa fa-cube"></i> ' . Yii::t('app', 'Projects') . '<span class="fa arrow"></span>', ['/project/index']) ?>
+                        <ul class="nav nav-second-level">
+                            <li><?= Html::a('<i class="fa fa-list"></i> ' . Yii::t('app', 'All projects'), ['/project/index']) ?></li>
+                            <li><?= Html::a('<i class="fa fa-plus"></i> ' . Yii::t('app', 'Create'), ['/project/create']) ?></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
