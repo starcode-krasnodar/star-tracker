@@ -206,4 +206,20 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /**
+     * @param bool $asString
+     * @return \yii\rbac\Role[]
+     */
+    public function getRoles($asString = false)
+    {
+        $authManager = Yii::$app->getAuthManager();
+        $roles = $authManager->getRolesByUser($this->id);
+        if ($asString) {
+            foreach ($roles as $i => $role) {
+                $roles[$i] = $role->name;
+            }
+        }
+        return $roles;
+    }
 }
