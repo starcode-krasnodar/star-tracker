@@ -11,12 +11,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="team-work-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a(Yii::t('app', 'Create Team Work'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [

@@ -19,6 +19,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
 
+        "cebe/yii2-gravatar": "*",
         "rmrevin/yii2-fontawesome": "2.10.*",
 
         "bower-asset/startbootstrap-sb-admin-2": "*"
