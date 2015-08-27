@@ -1,6 +1,7 @@
 <?php
 
-use yii\helpers\Html;
+use app\models\User;
+use cebe\gravatar\Gravatar;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -16,6 +17,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
 
             'id',
+            [
+                'label' => 'Gravatar',
+                'attribute' => 'email',
+                'value' => function(User $user) {
+                    return Gravatar::widget(['email' => $user->email, 'size' => 32]);
+                },
+                'format' => 'raw',
+            ],
             'email:email',
             // 'status',
             'created_at:datetime',
