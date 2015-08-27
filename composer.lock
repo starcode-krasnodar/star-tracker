@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1106380d95cadfccabc8f46a89ebb9e8",
+    "hash": "3c1fadc3672f99ada2d4a03ff859f53d",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -152,6 +152,93 @@
             ]
         },
         {
+            "name": "bower-asset/metisMenu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onokumus/metisMenu.git",
+                "reference": "d1057e08c4174090397b564e96446354d7f40a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onokumus/metisMenu/zipball/d1057e08c4174090397b564e96446354d7f40a2d",
+                "reference": "d1057e08c4174090397b564e96446354d7f40a2d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": "~2.1.4"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "dist/metisMenu.js",
+                    "dist/metisMenu.css"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "src",
+                    "composer.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A jQuery menu plugin",
+            "keywords": [
+                "accordion",
+                "bootstrap",
+                "jquery",
+                "menu",
+                "metis",
+                "metisMenu",
+                "toggle",
+                "twbs",
+                "twitter"
+            ],
+            "time": "2015-08-09 19:26:03"
+        },
+        {
+            "name": "bower-asset/morris.js",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oesmith/morris.js.git",
+                "reference": "75cdb5bd9713bda681ccee5f40a7c857c78bc039"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oesmith/morris.js/zipball/75cdb5bd9713bda681ccee5f40a7c857c78bc039",
+                "reference": "75cdb5bd9713bda681ccee5f40a7c857c78bc039",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.0",
+                "bower-asset/raphael": ">=2.0"
+            },
+            "require-dev": {
+                "bower-asset/chai": "~1.9.0",
+                "bower-asset/chai-jquery": "~1.2.1",
+                "bower-asset/mocha": "~1.17.1",
+                "bower-asset/morris.js-sinon-file": "*",
+                "bower-asset/sinon-chai": "~2.5.0"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "./morris.js",
+                    "./morris.css"
+                ],
+                "branch-alias": {
+                    "dev-master": "0.5.1-dev"
+                }
+            },
+            "time": "2014-10-15 12:01:41"
+        },
+        {
             "name": "bower-asset/punycode",
             "version": "v1.3.2",
             "source": {
@@ -176,6 +263,39 @@
                     "Gruntfile.js",
                     "node_modules",
                     "package.json"
+                ]
+            }
+        },
+        {
+            "name": "bower-asset/raphael",
+            "version": "v2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DmitryBaranovskiy/raphael.git",
+                "reference": "a29d980d1f6b0aed9a0f18d751a76e862f5fbc4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DmitryBaranovskiy/raphael/zipball/a29d980d1f6b0aed9a0f18d751a76e862f5fbc4f",
+                "reference": "a29d980d1f6b0aed9a0f18d751a76e862f5fbc4f",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "raphael.js",
+                "bower-asset-ignore": [
+                    "eve",
+                    "**/.*",
+                    "*.html",
+                    "*.json",
+                    "*.markdown",
+                    "*.md",
+                    "copy.js",
+                    "Gruntfile.js",
+                    "raphael.core.js",
+                    "raphael.svg.js",
+                    "raphael.vml.js",
+                    "reference.js"
                 ]
             }
         },
