@@ -7,14 +7,14 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
+$this->title = Yii::t('app', 'Login');
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please Sign In</h3>
+                    <h3 class="panel-title">StarTracker <?= Yii::t('app', 'Login') ?></h3>
                 </div>
                 <div class="panel-body">
                     <?php $form = ActiveForm::begin() ?>
