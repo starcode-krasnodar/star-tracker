@@ -3,7 +3,10 @@
 namespace app\controllers;
 
 use app\models\LoginForm;
+use app\models\ResetPasswordForm;
 use Yii;
+use yii\base\InvalidParamException;
+use yii\web\BadRequestHttpException;
 
 class ProfileController extends BaseController
 {
@@ -14,7 +17,7 @@ class ProfileController extends BaseController
     {
         $behaviors = parent::behaviors();
         $behaviors['access']['rules'][] = [
-            'actions' => ['login'],
+            'actions' => ['login', 'reset-password'],
             'allow' => true,
             'roles' => ['?'],
         ];
@@ -63,5 +66,30 @@ class ProfileController extends BaseController
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /**
+     * Resets password.
+     *
+     * @param string $token
+     * @return mixed
+     * @throws BadRequestHttpException
+     */
+    public function actionResetPassword($token)
+    {
+        $this->layout = 'login';
+
+        try {
+            $model = new ResetPasswordForm($token);
+        } catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+            Yii::$app->session->setFlash('success', 'New password was saved.');
+            return $this->goHome();
+        }
+        return $this->render('reset-password', [
+            'model' => $model,
+        ]);
     }
 }

@@ -207,6 +207,11 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
+    public function generateRandomPassword()
+    {
+        $this->password = Yii::$app->security->generateRandomString();
+    }
+
     /**
      * @param bool $asString
      * @return \yii\rbac\Role[]
