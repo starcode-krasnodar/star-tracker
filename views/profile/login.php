@@ -25,7 +25,8 @@ $this->title = Yii::t('app', 'Login');
                                 <?= Html::submitButton('Login', ['class' => 'btn btn-lg btn-success btn-block']) ?>
                             </div>
                         </fieldset>
-                    </form>
+                    <?php $form->end() ?>
+                    <?= Html::a('Forgot password?', ['/profile/request-password-reset']) ?>
                 </div>
             </div>
         </div>

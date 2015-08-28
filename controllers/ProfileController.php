@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\LoginForm;
+use app\models\PasswordResetRequestForm;
 use app\models\ResetPasswordForm;
 use Yii;
 use yii\base\InvalidParamException;
@@ -17,7 +18,7 @@ class ProfileController extends BaseController
     {
         $behaviors = parent::behaviors();
         $behaviors['access']['rules'][] = [
-            'actions' => ['login', 'reset-password'],
+            'actions' => ['login', 'reset-password', 'request-password-reset'],
             'allow' => true,
             'roles' => ['?'],
         ];
@@ -66,6 +67,29 @@ class ProfileController extends BaseController
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /**
+     * Requests password reset.
+     *
+     * @return mixed
+     */
+    public function actionRequestPasswordReset()
+    {
+        $this->layout = 'login';
+
+        $model = new PasswordResetRequestForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail()) {
+                Yii::$app->session->setFlash('success', 'Check your email for further instructions.');
+                return $this->goHome();
+            } else {
+                Yii::$app->session->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+            }
+        }
+        return $this->render('request-password-reset', [
+            'model' => $model,
+        ]);
     }
 
     /**
