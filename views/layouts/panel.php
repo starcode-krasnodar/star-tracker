@@ -28,7 +28,28 @@ AppAsset::register($this);
 <body>
 
 <?php $this->beginBody() ?>
-<?= $content ?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
+                </div>
+                <div class="panel-body">
+                    <?= $content ?>
+                </div>
+            </div>
+            
+            <?php if (Yii::$app->session->hasFlash('success')): ?>
+                <div class="alert alert-success" role="alert"><?= Yii::$app->session->getFlash('success') ?></div>
+            <?php elseif (Yii::$app->session->hasFlash('error')): ?>
+                <div class="alert alert-danger" role="alert"><?= Yii::$app->session->getFlash('error') ?></div>
+            <?php endif ?>
+        </div>
+    </div>
+</div>
+
 <?php $this->endBody() ?>
 
 </body>

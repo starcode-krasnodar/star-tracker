@@ -47,7 +47,7 @@ class ProfileController extends BaseController
 
     public function actionLogin()
     {
-        $this->layout = 'login';
+        $this->layout = 'panel';
 
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -76,7 +76,7 @@ class ProfileController extends BaseController
      */
     public function actionRequestPasswordReset()
     {
-        $this->layout = 'login';
+        $this->layout = 'panel';
 
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -101,7 +101,7 @@ class ProfileController extends BaseController
      */
     public function actionResetPassword($token)
     {
-        $this->layout = 'login';
+        $this->layout = 'panel';
 
         try {
             $model = new ResetPasswordForm($token);
