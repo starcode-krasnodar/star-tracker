@@ -17,6 +17,13 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+        'urlManager' => [
+            'hostInfo' => 'http://star-tracker.local',
+            'baseUrl' => '/',
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

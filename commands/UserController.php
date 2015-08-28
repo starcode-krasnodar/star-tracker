@@ -3,6 +3,7 @@
 namespace app\commands;
 
 use app\models\User;
+use Yii;
 use yii\console\Controller;
 
 /**
@@ -28,7 +29,14 @@ class UserController extends Controller
         if (!$user->save()) {
             $this->outputValidateErrors($user->getErrors());
         } else {
-            // todo: send email invite for user
+            Yii::$app->mailer->compose(['html' => 'password-reset-token-html', 'text' => 'password-reset-token-text'], [
+                'user' => $user,
+                'resetLink' => Yii::$app->urlManager->createAbsoluteUrl(['profile/reset-password', 'token' => $user->password_reset_token]),
+            ])
+                ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
+                ->setTo($user->email)
+                ->setSubject('Password reset for ' . Yii::$app->name)
+                ->send();
             echo "\033[32mCreate invite for new user ID {$user->id}, email sent to {$user->email}\033[0m\n";
         }
     }
