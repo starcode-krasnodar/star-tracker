@@ -15,6 +15,10 @@ use yii\web\IdentityInterface;
  * @property string $password_reset_token
  * @property string $email
  * @property string $auth_key
+ * @property string $forename
+ * @property string $surname
+ * @property string $phone
+ * @property string $skype
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
@@ -70,6 +74,10 @@ class User extends ActiveRecord implements IdentityInterface
             'auth_key' => Yii::t('app', 'Auth Key'),
             'password_hash' => Yii::t('app', 'Password Hash'),
             'password_reset_token' => Yii::t('app', 'Password Reset Token'),
+            'forename' => Yii::t('app', 'Forename'),
+            'surname' => Yii::t('app', 'Surname'),
+            'phone' => Yii::t('app', 'Phone number'),
+            'skype' => Yii::t('app', 'Skype username'),
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
